@@ -78,8 +78,8 @@ CMD yarn start
 
 ```yaml
 ...
-        volumes:
-            - ./src:/app
+volumes:
+    - ./src:/app
 ...
 ```
 
