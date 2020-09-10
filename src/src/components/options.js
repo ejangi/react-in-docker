@@ -1,21 +1,15 @@
-import React from 'react';
-import { useStateValue } from '../store/StateProvider';
+import React, { useContext } from 'react';
+import { TitleContext } from '../store/TitleProvider';
 
 function Options() {
-    const [{ title }, dispatch] = useStateValue();
+    const { title, setTitle } = useContext(TitleContext);
 
     function sayJames() {
-        dispatch({
-            type: 'CHANGE_TITLE',
-            title: 'Hello James',
-        });
+        setTitle('James');
     }
 
     function sayWorld() {
-        dispatch({
-            type: 'CHANGE_TITLE',
-            title: 'Hello World',
-        });
+        setTitle('World');
     }
 
     return (

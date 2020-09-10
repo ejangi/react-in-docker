@@ -1,11 +1,11 @@
-import React from 'react';
-import { useStateValue } from '../store/StateProvider';
+import React, { useContext } from 'react';
+import { TitleContext } from '../store/TitleProvider';
 
 function Header() {
-    const [{ title }, dispatch] = useStateValue();
+    const { title, setTitle } = useContext(TitleContext);
 
     return (
-        <h1>{title}</h1>
+        <h1>Hello {title}</h1>
     );
 }
 

@@ -1,8 +1,8 @@
-import React from 'react';
-import { useStateValue } from '../store/StateProvider';
+import React, { useContext } from 'react';
+import { TitleContext } from '../store/TitleProvider';
 
 function Debug() {
-    const [{ title }, dispatch] = useStateValue();
+    const { title } = useContext(TitleContext);
 
     return (
         <div className="App-debug">

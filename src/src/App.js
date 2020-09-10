@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import reducer, { initialState } from './store/reducer';
-import { StateProvider } from './store/StateProvider';
-import Header from './components/header';
-import Options from './components/options';
-import Debug from './components/debug';
+import { ContextProvider } from './store/state';
+import Header from './components/Header';
+import Options from './components/Options';
+import Debug from './components/Debug';
 
 function App() {
   return (
-    <StateProvider initialState={initialState} reducer={reducer}>
+    <ContextProvider>
       <div className="App">
         <header className="App-header">
           <Header />
@@ -16,7 +15,7 @@ function App() {
           <Debug />
         </header>
       </div>
-    </StateProvider>
+    </ContextProvider>
   );
 }
 
